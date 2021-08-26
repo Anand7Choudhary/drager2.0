@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p,
+span {
+    cursor: context-menu;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --togglebg: rgb(185, 166, 255);
+    --toggleslider: #ffffff;
+    --roundcolor: rgb(55, 0, 255);
+    --color: rgb(55, 0, 255);
+    --cbg: rgba(200, 200, 200);
+    --sliderAni: sliderLeft;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1b1b1b;
+    --togglebg: rgb(0, 161, 140);
+    --toggleslider: #e9dcdc;
+    --roundcolor: rgb(0, 216, 187);
+    --color: rgb(0, 216, 187);
+    --cbg: rgba(90, 90, 90);
+    --sliderAni: sliderRight;
+}
+
+body {
+    background-color: var(--bg-color);
+    /* background-color: #ffffff; */
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes sliderLeft {
+    from {
+        left: 30px;
+    }
+
+    to {
+        left: 2px;
+    }
+}
+
+@keyframes sliderRight {
+    from {
+        left: 2px;
+    }
+
+    to {
+        left: 30px;
+    }
+}
+
+.mainWorkBody .imageFloater .images::-webkit-scrollbar,
+.mainWorkBody .shapesFloater .symbols::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+}
+
+.mainWorkBody .imageFloater .images::-webkit-scrollbar-track,
+.mainWorkBody .shapesFloater .symbols::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.mainWorkBody .imageFloater .images::-webkit-scrollbar-thumb,
+.mainWorkBody .shapesFloater .symbols::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 203, 203);
+    border-radius: 5px;
+}
+
+.topNotch .theme-switch-wrapper #checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.topNotch .theme-switch-wrapper {
+    width: 20%;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topNotch .theme-switch-wrapper .title_dark {
+    white-space: nowrap;
+    font-size: 20px;
+    margin-right:10px;
+    color: var(--color);
+}
+
+.topNotch .theme-switch-wrapper .slider {
+    background-color: var(--togglebg);
+    /* bottom:0; */
+    cursor: pointer;
+    /* left:0; */
+    position: absolute;
+    /* right:0; */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.4s;
+    width: 60px;
+    height: 32px;
+    border-radius: 50px;
+    outline: none;
+    border: 1px solid var(--color);
+}
+
+.topNotch .theme-switch-wrapper .slider::before {
+    background-color: var(--roundcolor);
+    top: 2px;
+    content: "";
+    height: 26px;
+    left: 2px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+    border-radius: 50%;
+    outline: none;
+    animation: var(--sliderAni) 0.25s forwards;
+}
+
+.topNotch {
+    width: 100%;
+    height: 8vh;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    box-shadow: 0px 0.5px 5px 0px #000000;
+}
+
+.topNotch .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    font-size: 20px;
+    background-color: transparent;
+    color: var(--color);
+}
+
+.topNotch .topNotchbtn {
+    width: 60%;
+    background-color: transparent;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color);
+}
+
+.topNotch .topNotchbtn .btn {
+    margin: 0 1.5%;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.topNotch .topNotchbtn .btn:hover,
+.mainWorkBody .leftNotch .btn:hover {
+    background-image: linear-gradient(to right, rgb(133, 255, 255), rgb(255, 175, 255), rgb(255, 129, 192));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mainWorkBody {
+    width: 100%;
+    height: 92vh;
+    overflow: hidden;
+    overflow-y: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainWorkBody .imageFloater {
+    width: 200px;
+    height: 200px;
+    padding: 10px 0;
+    border-radius: 5px;
+    outline: none;
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    display: none;
+    z-index: 555;
+    left: 3.5%;
+}
+
+.mainWorkBody .imageFloater .leftarrow,
+.mainWorkBody .shapesFloater .leftarrow {
+    align-self: flex-start;
+    height: 100%;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 1);
+    filter: drop-shadow(-0.5px 0px 1px black);
+    z-index: 1;
+    position: relative;
+    top: 15px;
+    right: -2px;
+}
+
+.mainWorkBody .imageFloater .images {
+    outline: none;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    padding: 10px 2px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 0px 5px black);
+}
+
+.mainWorkBody .imageFloater .images img {
+    width: 75px;
+    height: 75px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0px 2px 5px 0px black;
+}
+
+.mainWorkBody .imageFloater .images img:hover,
+.mainWorkBody .shapesFloater .symbols p:hover {
+    transform: scale(1.25);
+}
+
+.mainWorkBody .shapesFloater {
+    width: 100px;
+    height: 150px;
+    padding: 10px 5px 10px 0;
+    border-radius: 5px;
+    outline: none;
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    display: none;
+    z-index: 555;
+    left: 3.5%;
+}
+
+.mainWorkBody .shapesFloater .symbols {
+    outline: none;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    padding: 10px 2px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 0px 5px black);
+}
+
+.mainWorkBody .shapesFloater .symbols p {
+    font-size: 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.mainWorkBody .leftNotch {
+    width: 5%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 2px 0 2px;
+    color: var(--color);
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0.5px 0px 5px 0px #000000;
+}
+
+.mainWorkBody .leftNotch .btn {
+    margin: 5% 0;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.mainWorkBody .centerNotch {
+    width: 70%;
+    height: 100%;
+    background-color: var(--cbg);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mainWorkBody .centerNotch .header {
+    width: 100%;
+    height: 10%;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    box-shadow: 0px -1px 10px 0px rgb(26, 26, 26);
+    transition: all 0.5s;
+}
+
+.mainWorkBody .centerNotch .header .header_items1,
+.mainWorkBody .centerNotch .header .header_items2 {
+    width: fit-content;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    cursor: context-menu;
+}
+
+.mainWorkBody .centerNotch .header .header_items {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    margin: 0 7px;
+}
+
+.mainWorkBody .centerNotch .header .hi1 {
+    background-color: rgb(255, 0, 0);
+}
+
+.mainWorkBody .centerNotch .header .hi2 {
+    background-color: rgb(38, 0, 255);
+}
+
+.mainWorkBody .centerNotch .header .hi3 {
+    background-color: rgb(0, 255, 85);
+}
+
+.mainWorkBody .centerNotch .header .hi4 {
+    margin: 0 7px 7px 7px;
+    font-size: 30px;
+}
+
+.mainWorkBody .centerNotch .header .hi5 {
+    margin: 0 7px;
+}
+
+.mainWorkBody .centerNotch .header .hi6 {
+    margin: 0 7px;
+}
+
+.mainWorkBody .centerNotch .workingArea {
+    width: 100%;
+    height: 90%;
+    background-color: white;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    box-shadow: 0px -1px 10px 0px rgb(26, 26, 26);
+    transition: all 0.5s;
+}
+
+.mainWorkBody .rightNotch {
+    width: 25%;
+    height: 100%;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: -0.5px 0px 5px 0px black;
+}

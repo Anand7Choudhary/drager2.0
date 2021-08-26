@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="main_body.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="topNotch">
+        <p class="title">PreDzn</p>
+        <div class="topNotchbtn">
+            <p class="desktopbtn btn" title="Desktop Mode" id="desktopbtn"><i class="fa fa-desktop"></i></p>
+            <p class="mobilebtn btn" title="Mobile Mode" id="mobilebtn"><i class="fa fa-mobile"></i></p>
+        </div>
+        <div class="theme-switch-wrapper">
+            <p class="title_dark">Dark Mode</p>
+            <label for="checkbox" class="theme-switch">
+                <input type="checkbox" name="checkbox" id="checkbox" checked>
+                <div class="slider round" id="slider"></div>
+            </label>
+        </div>
+    </div>
+    <div class="mainWorkBody">
+        <div class="leftNotch">
+            <p class="btn1 btn" id="btn1" onclick="addDiv()" title="Add Div Element"><i class="fa fa-square"></i></p>
+            <p class="btn2 btn" id="btn2" title="Add Image"><i class="fa fa-image"></i></p>
+            <p class="btn3 btn" id="btn3" onclick="addText()" title="Add Text"
+                style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: bolder;">
+                T</p>
+            <p class="btn4 btn" id="btn4" title="Add Colour Picker"><i class="fa fa-tint"></i></p>
+            <p class="btn5 btn" id="btn5" title="Add Shapes"><i class="fas fa-shapes"></i>📚</p>
+        </div>
+        <div class="leftNotchFloaters">
+            <div class="imageFloater" id="imageFloater">
+                <span class="leftarrow"><i class="fa fa-caret-left"></i></span>
+                <div class="images">
+                    <img alt="404" onclick="addImage(1)" src="arijitsingh.png">
+                    <img alt="404" onclick="addImage(2)" src="arijitsingh.png">
+                    <img alt="404" onclick="addImage(3)" src="arijitsingh.png">
+                    <img alt="404" onclick="addImage(4)" src="arijitsingh.png">
+                </div>
+            </div>
+            <div class="shapesFloater" id="shapesFloater">
+                <span class="leftarrow"><i class="fa fa-caret-left"></i></span>
+                <div class="symbols">
+                    <p class="shape1 shape" id="shape1"><i class="fa fa-bars"></i></p>
+                    <p class="shape2 shape" id="shape2"><i class="fa fa-times"></i></p>
+                    <p class="shape3 shape" id="shape3"><i class="fa fa-home"></i></p>
+                    <p class="shape4 shape" id="shape4"><i class="fa fa-caret-up"></i></p>
+                    <p class="shape5 shape" id="shape5"><i class="fa fa-sort-down"></i></p>
+                    <p class="shape6 shape" id="shape6"><i class="fa fa-heart"></i></p>
+                    <p class="shape7 shape" id="shape7"><i class="fa fa-arrow-left"></i></p>
+                </div>
+            </div>
+        </div>
+        <div class="centerNotch">
+            <div class="header" id="header">
+                <div class="header_items1">
+                    <div class="header_items hi1"></div>
+                    <div class="header_items hi2"></div>
+                    <div class="header_items hi3"></div>
+                </div>
+                <div class="header_items2">
+                    <div class="hi4">-</div>
+                    <div class="hi5">&#9713;</div>
+                    <div class="hi6">X</div>
+                </div>
+            </div>
+            <div class="workingArea main_body" id="main_body">
+
+            </div>
+        </div>
+        <div class="rightNotch">
+        </div>
+    </div>
+
+
+    <script src="home.js"></script>
+    <script src="main_body.js"></script>
+    <noscript>Please Enable JavaScript.</noscript>
+</body>
+
+</html>
