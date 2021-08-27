@@ -28,7 +28,7 @@
             </label>
         </div>
     </div>
-    <div class="mainWorkBody">
+    <div class="mainWorkBody" style="border-bottom: 1px solid rgb(0, 0, 0);">
         <div class="leftNotch">
             <p class="btn1 btn" id="btn1" onclick="addDiv()" title="Add Div Element"><i class="fa fa-square"></i></p>
             <p class="btn2 btn" id="btn2" title="Add Image"><i class="fa fa-image"></i></p>
@@ -36,7 +36,7 @@
                 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: bolder;">
                 T</p>
             <p class="btn4 btn" id="btn4" title="Add Colour Picker"><i class="fa fa-tint"></i></p>
-            <p class="btn5 btn" id="btn5" title="Add Shapes"><i class="fas fa-shapes"></i>📚</p>
+            <p class="btn5 btn" id="btn5" title="Add Shapes"><i class="fa fa-book"></i></p>
         </div>
         <div class="leftNotchFloaters">
             <div class="imageFloater" id="imageFloater">
@@ -78,11 +78,202 @@
         </div>
         <div class="rightNotch">
             <div class="body1">
-            <p class="rntitle1">Background</p>
-            <label for="bgcolor">Back Colour</label>
-            <input type="color" value="#ffffff" name="bgcolor" class="bgcolor" id="bgcolor"><br>
-            <label for="bgcolor">Overflow</label>
-            <input type="checkbox" name="overflowCheck" class="overflowCheck" id="overflowCheck">
+                <p class="rntitle1">Background</p>
+                <table>
+                    <tr>
+                        <td class="td1">Back Color : </td>
+                        <td class="td2"><input type="color" value="#ffffff" name="bgcolor" class="bgcolor" id="bgcolor"></td>
+                    </tr>
+                    <tr>
+                        <td class="td1">Overflow : </td>
+                        <td class="td2"><input type="checkbox" name="overflowCheck" class="overflowCheck" id="overflowCheck"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="body2">
+                <p class="rntitle1">Element</p>
+                <table>
+                    <tr>
+                        <td class="td1"><i class="fa fa-trash"></i></td>
+                        <td class="td2">Z-Index :&ensp;
+                        <input type="number" value="0" name="x-index" class="z-index" id="z-index">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="body3 dropdownBody">
+                <div class="fullDiv">
+                <div class="title" id="title1"><p class="heading">Body</p><p class="heading"><i class="fa fa-sort-down"></i></p></div>
+                <div class="content body3Content" id="body3Content">
+                    <table>
+                        <tr>
+                            <td class="td1">
+                                <p>Width : </p>
+                                <input type="range" class="width" id="width" min="1" max="2000" value="50">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Height : </p>
+                                <input type="range" class="height" id="height" min="1" max="2000" value="50">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td2">
+                                <p>Border-Radius</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Top-Left : </p>
+                                <input type="range" class="brtl" id="brtl" min="0" max="50" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Top-Right : </p>
+                                <input type="range" class="brtr" id="brtr" min="0" max="50" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Bottom-Left : </p>
+                                <input type="range" class="brbl" id="brbl" min="0" max="50" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Bottom-Right : </p>
+                                <input type="range" class="brbr" id="brbr" min="0" max="50" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1 td2">
+                                <p>Colour :&ensp;</p>
+                                <input type="color" class="backColor" id="backColor"value="#ffffff">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            </div>
+            <div class="body4 dropdownBody">
+                <div class="fullDiv">
+                <div class="title" id="title2"><p class="heading">Shadow</p><p class="heading"><i class="fa fa-sort-down"></i></p></div>
+                <div class="content body4Content" id="body4Content">
+                    <table>
+                        <tr>
+                            <td class="td1">
+                                <p>X-offset : </p>
+                                <input type="range" class="xoffset" id="xoffset" min="-50" max="50" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Y-offset : </p>
+                                <input type="range" class="yoffset" id="yoffset" min="-50" max="50" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Blur : </p>
+                                <input type="range" class="blur" id="blur" min="0" max="10" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Spread : </p>
+                                <input type="range" class="spread" id="spread" min="0" max="50" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1 td2">
+                                <p>Colour :&ensp;</p>
+                                <input type="color" class="shadowColor" id="shadowColor"value="#000000">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            </div>
+            <div class="body5 dropdownBody">
+                <div class="fullDiv">
+                <div class="title" id="title3"><p class="heading">Text</p><p class="heading"><i class="fa fa-sort-down"></i></p></div>
+                <div class="content body5Content" id="body5Content">
+                    <table>
+                        <tr>
+                            <td class="td1">
+                                <p>Text : </p>
+                                <input type="text" class="ftext" id="ftext" value="Hello">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Size : </p>
+                                <input type="range" class="fsize" id="fsize" min="1" max="50" value="16">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Style : </p>
+                                <select class="fontStyle" id="fontStyle">
+                                    <option value="calibri">Calibri</option>
+                                    <option value="Times New Roman">Times New Roman</option>
+                                    <option value="Georgia">Georgia</option>
+                                    <option value="serif">Serif</option>
+                                    <option value="cursive">Cursive</option>
+                                    <option value="Courier">Courier</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1 td2">
+                                <p>Colour :&ensp;</p>
+                                <input type="color" class="fColor" id="fColor"value="#000000">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            </div>
+             <div class="body6 dropdownBody">
+                <div class="fullDiv">
+                <div class="title" id="title4"><p class="heading">Transform</p><p class="heading"><i class="fa fa-sort-down"></i></p></div>
+            <div class="content body6Content" id="body6Content">
+                    <table>
+                        <tr>
+                            <td class="td1">
+                                <p>RotateX : </p>
+                                <input type="range" class="RotateX" id="RotateX" min="-360" max="360" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>RotateY : </p>
+                                <input type="range" class="RotateY" id="RotateY" min="-360" max="360" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>RotateX : </p>
+                                <input type="range" class="RotateX" id="RotateX" min="-360" max="360" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>SkewX : </p>
+                                <input type="range" class="SkewX" id="SkewX" min="-360" max="360" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>SkewY : </p>
+                                <input type="range" class="SkewY" id="SkewY" min="-360" max="360" value="0">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
             </div>
         </div>
     </div>

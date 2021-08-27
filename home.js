@@ -90,3 +90,39 @@ document
   .addEventListener("mouseout", function () {
     this.style.display = "none";
   });
+
+
+
+
+
+
+  //===============right Notch===================
+  document.getElementById("title1").addEventListener("click",function(){
+    dropmenu(0);
+  });
+  document.getElementById("title2").addEventListener("click", function () {
+    dropmenu(1);
+  });
+  document.getElementById("title3").addEventListener("click", function () {
+    dropmenu(2);
+  });
+  document.getElementById("title4").addEventListener("click", function () {
+    dropmenu(3);
+  });
+
+  const dropmenu=(n)=>{
+    let droping = document.getElementsByClassName("content");
+    if(droping[n].style.display==="block"){
+        for (let i = 0; i < droping.length; i++) {
+            droping[i].style.display = "none";
+        }
+    }else{
+      for (let i = 0; i < droping.length; i++) {
+        droping[i].style.display = "none";
+      }
+      droping[n].style.display = "block";
+      droping[n].style.animation="dropdown 1s ease";
+    }
+  }
+
+   window.onload = dropmenu(0);
