@@ -94,9 +94,9 @@
                 <p class="rntitle1">Element</p>
                 <table>
                     <tr>
-                        <td class="td1"><i class="fa fa-trash"></i></td>
+                        <td class="td1"><i class="fa fa-trash removebtn" id="removebtn"></i></td>
                         <td class="td2">Z-Index :&ensp;
-                        <input type="number" value="0" name="x-index" class="z-index" id="z-index">
+                        <input type="number" value="0" name="z-index" class="z-index" id="z-index">
                         </td>
                     </tr>
                 </table>
@@ -116,6 +116,18 @@
                             <td class="td1">
                                 <p>Height : </p>
                                 <input type="range" class="height" id="height" min="1" max="2000" value="50">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">
+                                <p>Opacity : </p>
+                                <input type="range" class="Transparency" id="Transparency" min="0" max="1" value="1" step="0.1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1 td2" style="margin-bottom: 2px;">
+                                <p>Colour :&ensp;</p>
+                                <input type="color" class="backColor" id="backColor" value="#ffffff">
                             </td>
                         </tr>
                         <tr>
@@ -147,12 +159,12 @@
                                 <input type="range" class="brbr" id="brbr" min="0" max="50" value="0">
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td class="td1 td2">
-                                <p>Colour :&ensp;</p>
-                                <input type="color" class="backColor" id="backColor"value="#ffffff">
+                                <p>Border Colour :&ensp;</p>
+                                <input type="color" class="borColor" id="borColor"value="#ffffff">
                             </td>
-                        </tr>
+                        </tr> -->
                     </table>
                 </div>
                 </div>
@@ -177,7 +189,7 @@
                         <tr>
                             <td class="td1">
                                 <p>Blur : </p>
-                                <input type="range" class="blur" id="blur" min="0" max="10" value="0">
+                                <input type="range" class="blur" id="blur" min="0" max="50" value="0">
                             </td>
                         </tr>
                         <tr>
@@ -255,8 +267,8 @@
                         </tr>
                         <tr>
                             <td class="td1">
-                                <p>RotateX : </p>
-                                <input type="range" class="RotateX" id="RotateX" min="-360" max="360" value="0">
+                                <p>RotateZ : </p>
+                                <input type="range" class="RotateZ" id="RotateZ" min="-360" max="360" value="0">
                             </td>
                         </tr>
                         <tr>
