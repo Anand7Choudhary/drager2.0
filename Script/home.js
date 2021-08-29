@@ -110,7 +110,8 @@ document
     dropmenu(3);
   });
 
-  const dropmenu=(n)=>{
+
+  const dropmenu=(n,t)=>{
     let droping = document.getElementsByClassName("content");
     if(droping[n].style.display==="block"){
         for (let i = 0; i < droping.length; i++) {
@@ -120,9 +121,14 @@ document
       for (let i = 0; i < droping.length; i++) {
         droping[i].style.display = "none";
       }
-      droping[n].style.display = "block";
-      droping[n].style.animation="dropdown 1s ease";
+      if (t == 1) {
+        t++;
+        droping[0].style.display = "none";
+      }else{
+        droping[n].style.display = "block";
+        droping[n].style.animation = "dropdown 1s ease";   
+      }
     }
   }
 
-   window.onload = dropmenu(0);
+   window.onload = dropmenu(0,1);

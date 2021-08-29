@@ -17,6 +17,7 @@ var itemyoffset = document.querySelector(".yoffset");
 var itemblur = document.querySelector(".blur");
 var itemspread = document.querySelector(".spread");
 var itemShadowColor = document.querySelector(".shadowColor");
+var itemShadowInset=document.querySelector(".inset");
 //=================
 var itemTextColor = document.querySelector(".fColor");
 var itemTextValue = document.querySelector(".ftext");
@@ -94,6 +95,11 @@ function focus(e) {
     itemTextValue.disabled = false;
   } else {
     itemTextValue.disabled = true;
+  }
+  if (activeItem.nodeName == "I") {
+    textfontStyle.disabled = true;
+  } else {
+    textfontStyle.disabled = false;
   }
   let items = document.getElementsByClassName("item");
   for (let i = 0; i < items.length; i++) {
@@ -213,6 +219,21 @@ function focus(e) {
     itemSkewY.addEventListener("input", function () {
       changeSkewY(e);
     });
+    itemxoffset.addEventListener("input",function(){
+      changeshadow(e);
+    });
+    itemyoffset.addEventListener("input",function(){
+      changeshadow(e);
+    });
+    itemblur.addEventListener("input",function(){
+      changeshadow(e);
+    });
+    itemShadowColor.addEventListener("input",function(){
+      changeshadow(e);
+    });
+    itemShadowInset.addEventListener("input", function () {
+      changeshadow(e);
+    });
     // textAlign.addEventListener("input", function () {
     //   changeTextAlign(e);
     // });
@@ -296,6 +317,24 @@ function changeTextFamily(e) {
   if (item.style.border != "none")
     item.style.fontFamily = textfontStyle.value;
   container.removeEventListener("focus", focus);
+}
+
+function changeshadow(e){
+  let item = document.getElementById(e.target.id);
+  if (item.style.border != "none"){
+  let shadow = "";
+            let inset;
+            let xyz;
+                let checkbox = document.getElementById("inset");
+                if (checkbox.checked) {
+                    inset = "inset";
+                } else {
+                    inset = "";
+                }
+                shadow = inset + " " + itemxoffset.value + "px " + itemyoffset.value + "px " + itemblur.value + "px " + itemspread.value + "px " + itemShadowColor.value;
+            item.style.boxShadow = shadow;
+  container.removeEventListener("focus", focus);
+}
 }
 
 function changeOpacity(e) {
@@ -443,45 +482,74 @@ function addImage(n) {
   div.style.backgroundSize = "cover";
   switch (n) {
     case 1:
-      div.style.backgroundImage = "url('arijitsingh.png')";
+      div.style.backgroundImage = "url('Image/Img1.png')";
       break;
     case 2:
-      div.style.backgroundImage = "url('arijitsingh.png')";
+      div.style.backgroundImage = "url('Image/Img2.png')";
       break;
     case 3:
-      div.style.backgroundImage = "url('arijitsingh.png')";
+      div.style.backgroundImage = "url('Image/Img3.png')";
       break;
     case 4:
-      div.style.backgroundImage = "url('arijitsingh.png')";
+      div.style.backgroundImage = "url('Image/Img4.png')";
+      break;
+    case 5:
+      div.style.backgroundImage = "url('Image/Img5.png')";
+      break;
+    case 6:
+      div.style.backgroundImage = "url('Image/Img6.png')";
+      break;
+    case 7:
+      div.style.backgroundImage = "url('Image/Img7.png')";
+      break;
+    case 8:
+      div.style.backgroundImage = "url('Image/Img8.png')";
+      break;
+    case 9:
+      div.style.backgroundImage = "url('Image/Img9.png')";
       break;
   }
   document.getElementById("main_body").appendChild(div);
-  // var btn = document.createElement("button");
-  // btn.className = btn_name;
-  // btn.id = btn_name;
-  // btn.innerHTML = "&#10006;";
-  // btn.style.alignSelf = "flex-start";
-  // btn.style.width = "10%";
-  // btn.style =
-  //   "padding:0px 5px;cursor:pointer;background-color:red;color:white;border:1px solid red;transition:all 0.25s ease-in-out;border-bottom-left-radius: 50%;";
-  // btn.style.position = "relative";
-  // btn.style.float = "right";
-  // btn.style.height = "fit-content";
-  // btn.style.zIndex = "1";
-  // document.getElementById(String("item" + c)).appendChild(btn);
-  // btn.addEventListener("mouseenter", function () {
-  //   btn.style.backgroundColor = "white";
-  //   btn.style.color = "red";
-  //   btn.style.border = "1px solid red";
-  // });
-  // btn.addEventListener("mouseleave", function () {
-  //   btn.style.backgroundColor = "red";
-  //   btn.style.color = "white";
-  //   btn.style.border = "1px solid red";
-  // });
-  // btn.addEventListener("click", function () {
-  //   btn.closest("div").remove();
-  // });
+}
+
+function addSymbol(n) {
+  c++;
+  let div_name = String("h" + c + " item hh");
+  var div = document.createElement("i");
+  //div.className = div_name;
+  div.id = "item" + c;
+  switch (n) {
+    case 0:
+      div.className=div_name+" fa fa-bars";
+      break;
+    case 1:
+      div.className = div_name + " fa fa-times";
+      break;
+    case 2:
+      div.className = div_name + " fa fa-home";
+      break;
+    case 3:
+      div.className = div_name + " fa fa-caret-up";
+      break;
+    case 4:
+      div.className = div_name + " fa fa-sort-down";
+      break;
+    case 5:
+      div.className = div_name + " fa fa-heart";
+      break;
+    case 6:
+      div.className = div_name + " fa fa-arrow-left";
+      break;
+    case 7:
+      div.className=div_name+" fa fa-user";
+      break;
+    case 8:
+      div.className=div_name+" fa fa-cog";
+      break;
+    case 9:
+      div.className=div_name+" fa fa-search";
+  }
+  document.getElementById("main_body").appendChild(div);
 }
 
 
