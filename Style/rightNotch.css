@@ -157,6 +157,10 @@ input[type="text"]{
     margin-right: 10px;
     cursor: pointer;
 }
+.mainWorkBody .rightNotch .dropicon{
+    transition:all 0.5s ease;
+    transform-origin: center center;
+}
 .mainWorkBody .rightNotch .body1{
     padding:2px 0;
     width:100%;
@@ -333,6 +337,9 @@ input[type="text"]{
 @media screen and (max-width:1000px){
     .mainWorkBody .rightNotch{
         width:100%;
+        height: fit-content;
+        /* overflow-y:auto; */
+        overflow:hidden;
     }
 }
 

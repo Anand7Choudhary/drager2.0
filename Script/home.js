@@ -57,6 +57,7 @@ document.getElementById("btn2").addEventListener("mouseover", function () {
   document.getElementById("imageFloater").style.display = "flex";
   let pos = this.getBoundingClientRect();
   document.getElementById("imageFloater").style.top = pos.top - 25 + "px";
+  document.getElementById("imageFloater").style.left=pos.left+30+"px";
 });
 document.getElementById("btn2").addEventListener("mouseout", function () {
   document.getElementById("imageFloater").style.display = "none";
@@ -76,6 +77,7 @@ document.getElementById("btn5").addEventListener("mouseover", function () {
   document.getElementById("shapesFloater").style.display = "flex";
   let pos = this.getBoundingClientRect();
   document.getElementById("shapesFloater").style.top = pos.top - 15 + "px";
+  document.getElementById("shapesFloater").style.left = pos.left + 30 + "px";
 });
 document.getElementById("btn5").addEventListener("mouseout", function () {
   document.getElementById("shapesFloater").style.display = "none";
@@ -113,19 +115,24 @@ document
 
   const dropmenu=(n,t)=>{
     let droping = document.getElementsByClassName("content");
+    let dropicon=document.getElementsByClassName("dropicon");
     if(droping[n].style.display==="block"){
         for (let i = 0; i < droping.length; i++) {
             droping[i].style.display = "none";
+            dropicon[i].style.transform="rotateZ(0deg)";
         }
     }else{
       for (let i = 0; i < droping.length; i++) {
         droping[i].style.display = "none";
+        dropicon[i].style.transform = "rotateZ(0deg)";
       }
       if (t == 1) {
         t++;
         droping[0].style.display = "none";
+        dropicon[0].style.transform = "rotateZ(0deg)";
       }else{
         droping[n].style.display = "block";
+        dropicon[n].style.transform = "rotateZ(180deg)";
         droping[n].style.animation = "dropdown 1s ease";   
       }
     }
