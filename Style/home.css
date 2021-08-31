@@ -382,3 +382,37 @@ body {
     box-shadow: 0px -1px 10px 0px rgb(26, 26, 26);
     transition: all 0.5s;
 }
+
+@media screen and (max-width:1000px) {
+    .topNotch .title{
+        width:fit-content;
+    }
+    .topNotch .topNotchbtn{
+        width:fit-content;
+    }
+    .topNotch .topNotchbtn .btn{
+        margin:0 5px;
+    }
+    .topNotch .theme-switch-wrapper{
+        width:fit-content;
+        position: absolute;
+        display: none;
+    }
+    .mainWorkBody{
+        width:100%;
+        height:108vh;
+        flex-direction: column;
+        align-items: center;
+    }
+    .mainWorkBody .leftNotch{
+        flex-direction: row;
+        width:100%;
+        height:fit-content;
+        justify-content: space-around;
+        padding:7px 5px;
+    }
+    .mainWorkBody .centerNotch{
+        width:100%;
+        height:200%;
+    }
+}
