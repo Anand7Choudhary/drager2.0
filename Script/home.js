@@ -56,7 +56,7 @@ const mobileMode=()=>{
 document.getElementById("btn2").addEventListener("mouseover", function () {
   document.getElementById("imageFloater").style.display = "flex";
   let pos = this.getBoundingClientRect();
-  document.getElementById("imageFloater").style.top = pos.top - 25 + "px";
+  document.getElementById("imageFloater").style.top = pos.top - 60 + "px";
   document.getElementById("imageFloater").style.left=pos.left+30+"px";
 });
 document.getElementById("btn2").addEventListener("mouseout", function () {
@@ -76,7 +76,7 @@ document
 document.getElementById("btn5").addEventListener("mouseover", function () {
   document.getElementById("shapesFloater").style.display = "flex";
   let pos = this.getBoundingClientRect();
-  document.getElementById("shapesFloater").style.top = pos.top - 15 + "px";
+  document.getElementById("shapesFloater").style.top = pos.top - 60 + "px";
   document.getElementById("shapesFloater").style.left = pos.left + 30 + "px";
 });
 document.getElementById("btn5").addEventListener("mouseout", function () {
